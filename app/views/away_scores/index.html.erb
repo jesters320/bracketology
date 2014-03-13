@@ -1,0 +1,29 @@
+<h1>Listing away_scores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ones</th>
+      <th>Display order</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @away_scores.each do |away_score| %>
+      <tr>
+        <td><%= away_score.ones %></td>
+        <td><%= away_score.display_order %></td>
+        <td><%= link_to 'Show', away_score %></td>
+        <td><%= link_to 'Edit', edit_away_score_path(away_score) %></td>
+        <td><%= link_to 'Destroy', away_score, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Away score', new_away_score_path %>

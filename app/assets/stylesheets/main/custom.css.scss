@@ -1,0 +1,251 @@
+/*
+	A list of variables can be found here.
+	https://github.com/thomas-mcdonald/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_variables.scss
+	
+*/
+
+/* palette */
+$myAqua:			#00C993;
+$myAquaDark:		#024930;
+$myAquaLight:		#9BDBC1;
+$myGrayVeryLight:	#eee;
+
+/* my standard colors */
+$myBlack: 			#000;
+$myWhite:			#fff;
+
+/* mapping to template */
+
+$myPrimary:				$myAqua;
+$myPrimaryDark:			$myAquaDark;
+$myPrimaryLight:		$myAquaLight;
+$myBackground:			$myWhite;
+$myGrayLight:			$myGrayVeryLight;
+$myGrayDarker:		darken($myGrayVeryLight, 50);
+
+
+/* mapping to bootstrap */
+/* need to update to bootstrap 3 */
+$linkColor: 					$myPrimary;
+$btnPrimaryBackgroundHighlight: $myPrimary;
+$navbarBackgroundHighlight: 	$myPrimaryDark;
+$navbarLinkColor: 				$myWhite;
+$navbarLinkColorHover: 			$myPrimary;
+$bodyBackground: 				$myBackground;
+$dropdownBackground: 			$myBackground;
+$dropdownLinkColor: 			$myPrimary;
+$hrBorder: 						$myBlack;
+$heroUnitBackground: 			lighten($myPrimaryLight, 20);
+$tableBackgroundAccent:			$heroUnitBackground;
+$dropdownLinkColorHover: 		$myPrimary;
+
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+$grayMediumLight: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* universal */
+
+html {
+  background:image-url('arena.jpg');
+}
+
+body {
+  background-color: rgba(255, 255, 255, .85) !important;
+  padding-top: 60px;
+}
+
+.navbar-fixed-top {
+	position: 		fixed!important;
+	margin-left: 	0px!important;
+	margin-right: 	0px!important;
+	margin-bottom: 1px!important;
+	min-height: 40px!important;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+ 
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+.centering{
+	float:none;
+	margin:	0 auto !important;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $myGrayLight;
+}
+
+.standout {
+	color: $myPrimary;
+	font-size: 2.5em;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+.bordered {
+	border-style:solid;
+	border-width:1px;
+}
+
+.ht-medium {
+	height:		75px;
+}
+
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 979px) {
+	.dropdown-menu {
+		display:		inline!important;	
+	}
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $grayMediumLight;
+  color: $myGrayDarker;
+  a {
+    color: $gray;
+    &:hover {
+      color: $myGrayDarker;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+
+/* Users index */
+
+
+/* Home page */
+
+.home-action {
+  margin: 10em;
+  
+}
+
+/****************************************************************************************
+	Media Queries
+****************************************************************************************/
+
+@media (max-width: 979px) {
+
+/* header */
+
+	.dropdown-menu {
+		display:		inline!important;	
+	}
+	
+}
+
+@media (max-width: 480px) {
+
+/* universal */
+
+	.hero-unit h1 {
+		font-size:		45px;	
+	}
+	
+}
+

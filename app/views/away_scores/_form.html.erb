@@ -1,0 +1,25 @@
+<%= form_for(@away_score) do |f| %>
+  <% if @away_score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@away_score.errors.count, "error") %> prohibited this away_score from being saved:</h2>
+
+      <ul>
+      <% @away_score.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ones %><br>
+    <%= f.number_field :ones %>
+  </div>
+  <div class="field">
+    <%= f.label :display_order %><br>
+    <%= f.number_field :display_order %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

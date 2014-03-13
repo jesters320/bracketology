@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @block.user %>
+</p>
+
+<p>
+  <strong>Home score:</strong>
+  <%= @block.home_score %>
+</p>
+
+<p>
+  <strong>Away score:</strong>
+  <%= @block.away_score %>
+</p>
+
+<%= link_to 'Edit', edit_block_path(@block) %> |
+<%= link_to 'Back', blocks_path %>

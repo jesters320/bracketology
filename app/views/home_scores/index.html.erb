@@ -1,0 +1,29 @@
+<h1>Listing home_scores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ones</th>
+      <th>Display order</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @home_scores.each do |home_score| %>
+      <tr>
+        <td><%= home_score.ones %></td>
+        <td><%= home_score.display_order %></td>
+        <td><%= link_to 'Show', home_score %></td>
+        <td><%= link_to 'Edit', edit_home_score_path(home_score) %></td>
+        <td><%= link_to 'Destroy', home_score, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Home score', new_home_score_path %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ones:</strong>
+  <%= @home_score.ones %>
+</p>
+
+<p>
+  <strong>Display order:</strong>
+  <%= @home_score.display_order %>
+</p>
+
+<%= link_to 'Edit', edit_home_score_path(@home_score) %> |
+<%= link_to 'Back', home_scores_path %>

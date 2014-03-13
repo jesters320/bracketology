@@ -1,0 +1,2 @@
+module HomeScoresHelper
+end
