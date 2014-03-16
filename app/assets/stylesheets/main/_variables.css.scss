@@ -1,0 +1,21 @@
+/* palette */
+$myAqua:			#00C993;
+$myAquaDark:		#024930;
+$myAquaLight:		#9BDBC1;
+$myGrayVeryLight:	#eee;
+$myBlue:			#00248F;
+$myBlueDark:		#000F3D;
+$myBlueLight:		#99ADEB;
+
+/* my standard colors */
+$myBlack: 			#000;
+$myWhite:			#fff;
+
+/* mapping to template */
+
+$myPrimary:				$myBlue;
+$myPrimaryDark:			$myBlueDark;
+$myPrimaryLight:		$myBlueLight;
+$myBackground:			$myWhite;
+$myGrayLight:			$myGrayVeryLight;
+$myGrayDarker:		darken($myGrayVeryLight, 50);

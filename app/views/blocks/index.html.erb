@@ -3,21 +3,21 @@
 	<div class="span10">
 		<div class="row">
 		
-			<div class="col-sm-1 ht-medium"></div>
+			<div class="col-sm-1 block_ht-medium"></div>
 			<% @home_score.each do |hs| %>
-				<div class="col-sm-1 ht-medium standout">
+				<div class="col-sm-1 block_ht-medium standout">
 					<span class="center"><%= hs.ones %></span>
 				</div>
 			<% end %>
-			<div class="col-sm-1 ht-medium"></div>
+			<div class="col-sm-1 block_ht-medium"></div>
 		
 			<% @away_score.each do |as| %>
-				<div class="col-sm-1 ht-medium standout center">
+				<div class="col-sm-1 block_ht-medium standout center">
 					<%= as.ones %>
 				</div>
 			
 				<% @blocks.where(away_score: as).includes(:home_score).order('home_scores.display_order').each do |block| %>
-				  <div class="col-sm-1 bordered ht-medium">
+				  <div class="col-sm-1 bordered block_ht-medium block_background">
 					<strong><%= block.home_score.ones %></strong>
 					<strong><%= block.away_score.ones %></strong>
 					<br>
@@ -34,7 +34,7 @@
 				  </div>
 				<% end %>
 				
-				<div class="col-sm-1 ht-medium"></div>
+				<div class="col-sm-1 block_ht-medium"></div>
 			<% end %>	
 			
 			
