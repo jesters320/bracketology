@@ -17,16 +17,14 @@
 				</div>
 			
 				<% @blocks.where(away_score: as).includes(:home_score).order('home_scores.display_order').each do |block| %>
-					<div class="col-sm-1 block_ht-medium">	
+					<div class="col-sm-1 block_ht-medium block_container">	
 					 <div class="block_box block_ht-fill center">
 						<strong><%= block.home_score.ones %></strong>
 						<strong><%= block.away_score.ones %></strong>
 						<br>
-						<strong>
-							<% unless block.user.nil? %>
-								<%= block.user.name %>
-							<% end %>
-						</strong>
+						<% unless block.user.nil? %>
+							<%= block.user.name %>
+						<% end %>
 						<% if !current_user.nil? && current_user.admin? %>
 							<span><%= link_to 'Show', block %></span>
 							<span><%= link_to 'Edit', edit_block_path(block) %></span>

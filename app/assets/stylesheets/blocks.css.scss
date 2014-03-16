@@ -15,6 +15,14 @@
 
 .block_box {
 	background-color: rgba(150, 150, 150, .5) !important;
+	overflow:	hidden;
+}
+
+.block_container {
+}
+
+.block_box-hover {
+	overflow:	visible;
 }
 
 .block_ht-fill {
