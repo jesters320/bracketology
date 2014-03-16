@@ -18,6 +18,17 @@
 						<span class="game_score">
 							<strong><%= game.away_score %></strong>
 						</span>
+						
+						<% @home_score = HomeScore.find_by(ones: game.home_score % 10) %>
+						<% @away_score = AwayScore.find_by(ones: game.away_score % 10) %>
+						<% @winner = Block.find_by(home_score: @home_score, away_score: @away_score) %>
+						<% unless @winner.nil? || @winner.user.nil? %>
+							<br>
+							<span>
+								<%= @winner.user.name %>
+							</span>
+						<% end %>
+						
 						<br>
 						<% if !current_user.nil? %>
 							<span><%= link_to 'Show', game %></span>
