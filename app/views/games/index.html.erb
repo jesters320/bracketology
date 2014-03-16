@@ -1,35 +1,38 @@
-<h1>Listing games</h1>
+<div class="container">
+	<div class="span1"><div>
+	<div class="span10">
+		<div class="row">
+				<% @games.each do |game| %>
+					<div class="col-sm-6 game_ht-medium">
+					  <div class="game_ht-fill game_box">
+						<span class="game_name">
+							<strong><%= game.home_team %></strong>
+						</span>
+						<span class="game_score">
+							<strong><%= game.home_score %></strong>
+						</span>
+						<br>
+						<span class="game_name">
+							<strong><%= game.away_team %></strong>
+						</span>
+						<span class="game_score">
+							<strong><%= game.away_score %></strong>
+						</span>
+						<br>
+						<% if !current_user.nil? %>
+							<span><%= link_to 'Show', game %></span>
+							<span><%= link_to 'Edit', edit_game_path(game) %></span>
+							<span><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+						<% end %>
+					  </div>
+					</div>
+				<% end %>
+			
+			
+		</div>
+	</div>
+	<div class="span1"><div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Home team</th>
-      <th>Away team</th>
-      <th>Home score</th>
-      <th>Away score</th>
-      <th>Unique identifier</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @games.each do |game| %>
-      <tr>
-        <td><%= game.home_team %></td>
-        <td><%= game.away_team %></td>
-        <td><%= game.home_score %></td>
-        <td><%= game.away_score %></td>
-        <td><%= game.unique_identifier %></td>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
 
 <%= link_to 'New Game', new_game_path %>

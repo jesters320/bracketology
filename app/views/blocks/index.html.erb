@@ -1,40 +1,42 @@
-<div class="row">
+<div class="container">
 	<div class="span1"><div>
 	<div class="span10">
 		<div class="row">
 		
-			<div class="col-sm-1 block_ht-medium"></div>
+			<div class="col-sm-1 block_ht-medium mobile-hide"></div>
 			<% @home_score.each do |hs| %>
-				<div class="col-sm-1 block_ht-medium standout">
+				<div class="col-sm-1 block_ht-medium standout center mobile-hide">
 					<span class="center"><%= hs.ones %></span>
 				</div>
 			<% end %>
-			<div class="col-sm-1 block_ht-medium"></div>
+			<div class="col-sm-1 block_ht-medium mobile-hide"></div>
 		
 			<% @away_score.each do |as| %>
-				<div class="col-sm-1 block_ht-medium standout center">
+				<div class="col-sm-1 block_ht-medium standout center mobile-hide">
 					<%= as.ones %>
 				</div>
 			
 				<% @blocks.where(away_score: as).includes(:home_score).order('home_scores.display_order').each do |block| %>
-				  <div class="col-sm-1 bordered block_ht-medium block_background">
-					<strong><%= block.home_score.ones %></strong>
-					<strong><%= block.away_score.ones %></strong>
-					<br>
-					<strong>
-						<% unless block.user.nil? %>
-							<%= block.user.name %>
+					<div class="col-sm-1 block_ht-medium">	
+					 <div class="block_box block_ht-fill center">
+						<strong><%= block.home_score.ones %></strong>
+						<strong><%= block.away_score.ones %></strong>
+						<br>
+						<strong>
+							<% unless block.user.nil? %>
+								<%= block.user.name %>
+							<% end %>
+						</strong>
+						<% if !current_user.nil? && current_user.admin? %>
+							<span><%= link_to 'Show', block %></span>
+							<span><%= link_to 'Edit', edit_block_path(block) %></span>
+							<span><%= link_to 'Destroy', block, method: :delete, data: { confirm: 'Are you sure?' } %></span>
 						<% end %>
-					</strong>
-					<% if current_user.admin? %>
-						<span><%= link_to 'Show', block %></span>
-						<span><%= link_to 'Edit', edit_block_path(block) %></span>
-						<span><%= link_to 'Destroy', block, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-					<% end %>
-				  </div>
+					  </div>
+					</div>
 				<% end %>
 				
-				<div class="col-sm-1 block_ht-medium"></div>
+				<div class="col-sm-1 block_ht-medium mobile-hide"></div>
 			<% end %>	
 			
 			
