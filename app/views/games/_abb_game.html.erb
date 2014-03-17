@@ -1,3 +1,4 @@
+<% unless game.home.nil? || game.away.nil? %>
 			<span class="game_name">
 				<%= game.home.abb %>
 			</span>
@@ -11,3 +12,4 @@
 			<span class="game_score">
 				<%= game.away_score %>
 			</span>
+<% end %>
