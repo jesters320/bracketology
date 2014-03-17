@@ -6,39 +6,41 @@
 </p>
 
 <p>
-  <strong>Home team:</strong>
-  <%= @game.home_team %>
-</p>
-
-<p>
-  <strong>Home team abbreviation:</strong>
-  <%= @game.home_abb %>
-</p>
-
-<p>
-  <strong>Away team:</strong>
-  <%= @game.away_team %>
-</p>
-
-<p>
-  <strong>Away team abbreviation:</strong>
-  <%= @game.away_abb %>
-</p>
-
-<p>
-  <strong>Home score:</strong>
-  <%= @game.home_score %>
-</p>
-
-<p>
-  <strong>Away score:</strong>
-  <%= @game.away_score %>
-</p>
-
-<p>
   <strong>Unique identifier:</strong>
   <%= @game.unique_identifier %>
 </p>
+
+<div class='container'>
+	<div class='row'>
+	  <% unless @game.home.nil? || @game.away.nil? %>
+		<div class='col-sm-4'>
+			<h1><%= @game.home.seed.to_s + ' - ' + @game.home.name %></h1>
+		</div>
+		<div class='col-sm-1'>
+			<h1>vs.</h1>
+		</div>
+		<div class='col-sm-4'>
+			<h1><%= @game.away.seed.to_s + ' - ' + @game.away.name %></h1>
+		</div>
+	  <% end %>
+	</div>
+
+	<div class='row'>
+	  <% unless @game.home.nil? || @game.away.nil? %>
+		<div class='col-sm-4'>
+			<h1><%= @game.home_score %></h1>
+		</div>
+		<div class='col-sm-1'>
+		</div>
+		<div class='col-sm-4'>
+			<h1><%= @game.away_score %></h1>
+		</div>
+	  <% end %>
+	</div>
+
+</div>
+
+
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>

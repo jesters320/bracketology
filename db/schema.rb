@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140317152555) do
+ActiveRecord::Schema.define(version: 20140317161723) do
 
   create_table "away_scores", force: true do |t|
     t.integer  "ones"
@@ -33,16 +33,14 @@ ActiveRecord::Schema.define(version: 20140317152555) do
   add_index "blocks", ["user_id"], name: "index_blocks_on_user_id"
 
   create_table "games", force: true do |t|
-    t.string   "home_team"
-    t.string   "away_team"
     t.integer  "home_score"
     t.integer  "away_score"
     t.string   "unique_identifier"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "game_number"
-    t.string   "home_abb"
-    t.string   "away_abb"
+    t.integer  "home_id"
+    t.integer  "away_id"
   end
 
   create_table "home_scores", force: true do |t|
