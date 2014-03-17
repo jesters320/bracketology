@@ -15,9 +15,9 @@
 	</span>
 	<br>
 	<% @winner = game.find_winner %>
-	<% unless @winner.nil? || @winner.user.nil? %>
+	<% unless @winner.nil? || @winner.player.nil? %>
 		<span>
-			<%= @winner.user.name %>
+			<%= @winner.player.name %>
 		</span>
 	<% end %>
 	

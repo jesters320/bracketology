@@ -1,5 +1,5 @@
 class Block < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :player
   belongs_to :home_score
   belongs_to :away_score
   	

@@ -1,0 +1,24 @@
+<h1>Listing players</h1>
+
+<div class="container">
+	<div class="row">
+      <div class='col-sm-6'>Name</div>
+      <div class='col-sm-1'></div>
+      <div class='col-sm-1'></div>
+      <div class='col-sm-1'></div>
+    </div>
+ 
+    <% @players.each do |player| %>
+      <div class="row">
+		<div class='col-sm-6'><%= player.name %></div>
+        <div class='col-sm-1'><%= link_to 'Show', player %></div>
+        <div class='col-sm-1'><%= link_to 'Edit', edit_player_path(player) %></div>
+        <div class='col-sm-1'><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+      </div>
+    <% end %>
+
+</div>
+
+<br>
+
+<%= link_to 'New Player', new_player_path %>

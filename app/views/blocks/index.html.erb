@@ -22,8 +22,8 @@
 						<strong><%= block.home_score.ones %></strong>
 						<strong><%= block.away_score.ones %></strong>
 						<br>
-						<% unless block.user.nil? %>
-							<%= block.user.name %>
+						<% unless block.player.nil? %>
+							<%= block.player.name %>
 						<% end %>
 						<br>
 						<% if !current_user.nil? %>

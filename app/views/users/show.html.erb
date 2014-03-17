@@ -5,15 +5,5 @@
   <%= @user.name %>
 </p>
 
-<p>
-  <strong>Blocks:</strong>
-  <ul>
-	  <% @user.blocks.each do |b| %>
-		<li><%= "h:#{b.home_score.ones} | a:#{b.away_score.ones}" %></li>
-	  <% end %>
-  </ul>
-</p>
-
-
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
-	has_many :blocks
-
+	
 	before_save { self.email = email.downcase }
 	before_create :create_remember_token
 
