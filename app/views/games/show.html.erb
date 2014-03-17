@@ -25,8 +25,9 @@
 	  <% end %>
 	</div>
 
-	<div class='row'>
+	
 	  <% unless @game.home.nil? || @game.away.nil? %>
+	  <div class='row'>
 		<div class='col-sm-4'>
 			<h1><%= @game.home_score %></h1>
 		</div>
@@ -35,8 +36,19 @@
 		<div class='col-sm-4'>
 			<h1><%= @game.away_score %></h1>
 		</div>
+	  </div>
 	  <% end %>
+	
+	<% @winner = @game.find_winner %>
+	<% unless @winner.nil? || @winner.player.nil? %>
+	<div class='row'>
+		<div class='col-sm-9'>
+			<h1><%= @winner.player.name %></h1>
+		</div>
 	</div>
+	<% end %>
+	
+	
 
 </div>
 
