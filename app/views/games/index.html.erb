@@ -2,19 +2,7 @@
 <!-- 1-16 -->
 	<div class="row">
 		<div class="col-sm-1 game_ht-small game_box">
-			<span class="game_name">
-				<%= @game1.home_abb %>
-			</span>
-			<span class="game_score">
-				<%= @game1.home_score %>
-			</span>
-			<br>
-			<span class="game_name">
-				<%= @game1.away_abb %>
-			</span>
-			<span class="game_score">
-				<%= @game1.away_score %>
-			</span>
+			<%= render partial: "abb_game", locals: {game: @game1} %>
 		</div>
 		<div class="col-sm-1 game_ht-small game_box col-sm-offset-10">
 		  
