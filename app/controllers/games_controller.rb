@@ -1,12 +1,28 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
-  before_action :signed_in_user, except: [:index]
+  before_action :signed_in_user, except: [:index, :show]
 
   # GET /games
   # GET /games.json
   def index
     @games = Game.all
-	@game1 = Game.find_by(game_number: 1)
+	@game1 = @games.find_by(game_number: 1)
+	@game2 = @games.find_by(game_number: 2)
+	@game3 = @games.find_by(game_number: 3)
+	@game4 = @games.find_by(game_number: 4)
+	@game5 = @games.find_by(game_number: 5)
+	@game6 = @games.find_by(game_number: 6)
+	@game7 = @games.find_by(game_number: 7)
+	@game8 = @games.find_by(game_number: 8)
+	@game9 = @games.find_by(game_number: 9)
+	@game10 = @games.find_by(game_number: 10)
+	@game11 = @games.find_by(game_number: 11)
+	@game12 = @games.find_by(game_number: 12)
+	@game13 = @games.find_by(game_number: 13)
+	@game14 = @games.find_by(game_number: 14)
+	@game15 = @games.find_by(game_number: 15)
+	@game16 = @games.find_by(game_number: 16)
+	
   end
 
   # GET /games/1

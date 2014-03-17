@@ -1,15 +1,19 @@
-<% unless game.home.nil? || game.away.nil? %>
+<a href="<%= game_path(game) %>">
+	<% unless game.home.nil? || game.away.nil? %>
 			<span class="game_name">
-				<%= game.home.abb %>
+				<%= game.home.seed.to_s + '-' + game.home.abb %>
 			</span>
 			<span class="game_score">
 				<%= game.home_score %>
 			</span>
 			<br>
 			<span class="game_name">
-				<%= game.away.abb %>
+				<%= game.away.seed.to_s + '-' + game.away.abb %>
 			</span>
 			<span class="game_score">
 				<%= game.away_score %>
 			</span>
-<% end %>
+	<% else %>
+		<%= game.game_number %>
+	<% end %>
+</a>
