@@ -1,0 +1,31 @@
+<div class="col-sm-6 game_ht-medium">
+  <div class="game_ht-fill game_box">
+	<span class="game_name">
+		<strong><%= game.home_team %></strong>
+	</span>
+	<span class="game_score">
+		<strong><%= game.home_score %></strong>
+	</span>
+	<br>
+	<span class="game_name">
+		<strong><%= game.away_team %></strong>
+	</span>
+	<span class="game_score">
+		<strong><%= game.away_score %></strong>
+	</span>
+	<br>
+	<% @winner = game.find_winner %>
+	<% unless @winner.nil? || @winner.user.nil? %>
+		<span>
+			<%= @winner.user.name %>
+		</span>
+	<% end %>
+	
+	<br>
+	<% if !current_user.nil? %>
+		<span><%= link_to 'Show', game %></span>
+		<span><%= link_to 'Edit', edit_game_path(game) %></span>
+		<span><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+	<% end %>
+  </div>
+</div>

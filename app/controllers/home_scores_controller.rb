@@ -1,5 +1,6 @@
 class HomeScoresController < ApplicationController
   before_action :set_home_score, only: [:show, :edit, :update, :destroy]
+  before_action :signed_in_user
 
   # GET /home_scores
   # GET /home_scores.json

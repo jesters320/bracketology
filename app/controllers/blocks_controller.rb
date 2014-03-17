@@ -1,5 +1,6 @@
 class BlocksController < ApplicationController
   before_action :set_block, only: [:show, :edit, :update, :destroy]
+  	before_action :signed_in_user, except: [:index]
 
   # GET /blocks
   # GET /blocks.json

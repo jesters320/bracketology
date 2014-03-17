@@ -1,5 +1,6 @@
 class AwayScoresController < ApplicationController
   before_action :set_away_score, only: [:show, :edit, :update, :destroy]
+  	before_action :signed_in_user
 
   # GET /away_scores
   # GET /away_scores.json
