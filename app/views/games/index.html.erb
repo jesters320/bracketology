@@ -1,49 +1,436 @@
 <div class="container">
-	<div class="span1"><div>
-	<div class="span10">
-		<div class="row">
-				<% @games.each do |game| %>
-					<div class="col-sm-6 game_ht-medium">
-					  <div class="game_ht-fill game_box">
-						<span class="game_name">
-							<strong><%= game.home_team %></strong>
-						</span>
-						<span class="game_score">
-							<strong><%= game.home_score %></strong>
-						</span>
-						<br>
-						<span class="game_name">
-							<strong><%= game.away_team %></strong>
-						</span>
-						<span class="game_score">
-							<strong><%= game.away_score %></strong>
-						</span>
-						
-						<% @home_score = HomeScore.find_by(ones: game.home_score % 10) %>
-						<% @away_score = AwayScore.find_by(ones: game.away_score % 10) %>
-						<% @winner = Block.find_by(home_score: @home_score, away_score: @away_score) %>
-						<% unless @winner.nil? || @winner.user.nil? %>
-							<br>
-							<span>
-								<%= @winner.user.name %>
-							</span>
-						<% end %>
-						
-						<br>
-						<% if !current_user.nil? %>
-							<span><%= link_to 'Show', game %></span>
-							<span><%= link_to 'Edit', edit_game_path(game) %></span>
-							<span><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-						<% end %>
-					  </div>
-					</div>
-				<% end %>
-			
-			
+<!-- 1-16 -->
+	<div class="row">
+		<div class="col-sm-1 game_ht-small">
+		  <div class="game_ht-fill game_box">
+1-16
+		  </div>
+		</div>
+		<div class="col-sm-1 game_ht-small col-sm-offset-10">
+		  <div class="game_ht-fill game_box">
+1-16
+		  </div>
 		</div>
 	</div>
-	<div class="span1"><div>
+
+		<!-- second round -->
+		<div class="row">
+			<div class="col-sm-1 game_ht-small col-sm-offset-1">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+			<div class="col-sm-1 game_ht-small col-sm-offset-8">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+		</div>
+	
+<!-- 8-9 -->
+	<div class="row">
+		<div class="col-sm-1 game_ht-small">
+		  <div class="game_ht-fill game_box">
+8-9
+		  </div>
+		</div>
+		<div class="col-sm-1 game_ht-small col-sm-offset-10">
+		  <div class="game_ht-fill game_box">
+8-9
+		  </div>
+		</div>
+	</div>
+	
+		<!-- third round -->
+		<div class="row">
+			<div class="col-sm-1 game_ht-small col-sm-offset-2">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+			<div class="col-sm-1 game_ht-small col-sm-offset-6">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+		</div>
+	
+<!-- 5-12 -->
+	<div class="row">
+		<div class="col-sm-1 game_ht-small">
+		  <div class="game_ht-fill game_box">
+5-12
+		  </div>
+		</div>
+		<div class="col-sm-1 game_ht-small col-sm-offset-10">
+		  <div class="game_ht-fill game_box">
+5-12
+		  </div>
+		</div>
+	</div>
+	
+		<!-- second round -->
+		<div class="row">
+			<div class="col-sm-1 game_ht-small col-sm-offset-1">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+			<div class="col-sm-1 game_ht-small col-sm-offset-8">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+		</div>
+	
+<!-- 4-13 -->
+	<div class="row">
+		<div class="col-sm-1 game_ht-small">
+		  <div class="game_ht-fill game_box">
+4-13
+		  </div>
+		</div>
+		<div class="col-sm-1 game_ht-small col-sm-offset-10">
+		  <div class="game_ht-fill game_box">
+4-13
+		  </div>
+		</div>
+	</div>
+		
+		<!-- fourth round -->
+		<div class="row">
+			<div class="col-sm-1 game_ht-small col-sm-offset-3">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+			<div class="col-sm-1 game_ht-small col-sm-offset-4">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+		</div>
+		
+<!-- 6-11 -->
+	<div class="row">
+		<div class="col-sm-1 game_ht-small">
+		  <div class="game_ht-fill game_box">
+6-11
+		  </div>
+		</div>
+		<div class="col-sm-1 game_ht-small col-sm-offset-10">
+		  <div class="game_ht-fill game_box">
+6-11
+		  </div>
+		</div>
+	</div>
+	
+		<!-- second round -->
+		<div class="row">
+			<div class="col-sm-1 game_ht-small col-sm-offset-1">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+			<div class="col-sm-1 game_ht-small col-sm-offset-8">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+		</div>
+	
+<!-- 3-14 -->
+	<div class="row">
+		<div class="col-sm-1 game_ht-small">
+		  <div class="game_ht-fill game_box">
+3-14
+		  </div>
+		</div>
+		<div class="col-sm-1 game_ht-small col-sm-offset-10">
+		  <div class="game_ht-fill game_box">
+3-14
+		  </div>
+		</div>
+	</div>
+	
+		<!-- third round -->
+		<div class="row">
+			<div class="col-sm-1 game_ht-small col-sm-offset-2">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+			<div class="col-sm-1 game_ht-small col-sm-offset-6">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+		</div>
+	
+<!-- 7-10 -->
+	<div class="row">
+		<div class="col-sm-1 game_ht-small">
+		  <div class="game_ht-fill game_box">
+7-10
+		  </div>
+		</div>
+		<div class="col-sm-1 game_ht-small col-sm-offset-10">
+		  <div class="game_ht-fill game_box">
+7-10
+		  </div>
+		</div>
+	</div>
+	
+		<!-- second round -->
+		<div class="row">
+			<div class="col-sm-1 game_ht-small col-sm-offset-1">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+			<div class="col-sm-1 game_ht-small col-sm-offset-8">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+		</div>
+	
+<!-- 2-15 -->
+	<div class="row">
+		<div class="col-sm-1 game_ht-small">
+		  <div class="game_ht-fill game_box">
+2-15
+		  </div>
+		</div>
+		<div class="col-sm-1 game_ht-small col-sm-offset-10">
+		  <div class="game_ht-fill game_box">
+2-15
+		  </div>
+		</div>
+	</div>
+
+		<!-- sixth round -->
+		<div class="row">
+			<div class="col-sm-1 game_ht-small col-sm-offset-4">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+			<div class="col-sm-1 game_ht-small col-sm-offset-2">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+		</div>
+
+<!-- 1-16 -->
+	<div class="row">
+		<div class="col-sm-1 game_ht-small">
+		  <div class="game_ht-fill game_box">
+1-16
+		  </div>
+		</div>
+		<div class="col-sm-1 game_ht-small col-sm-offset-10">
+		  <div class="game_ht-fill game_box">
+1-16
+		  </div>
+		</div>
+	</div>
+
+		<!-- second round -->
+		<div class="row">
+			<div class="col-sm-1 game_ht-small col-sm-offset-1">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+			<div class="col-sm-1 game_ht-small col-sm-offset-8">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+		</div>
+	
+<!-- 8-9 -->
+	<div class="row">
+		<div class="col-sm-1 game_ht-small">
+		  <div class="game_ht-fill game_box">
+8-9
+		  </div>
+		</div>
+		<div class="col-sm-1 game_ht-small col-sm-offset-10">
+		  <div class="game_ht-fill game_box">
+8-9
+		  </div>
+		</div>
+	</div>
+	
+		<!-- third round -->
+		<div class="row">
+			<div class="col-sm-1 game_ht-small col-sm-offset-2">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+			<div class="col-sm-1 game_ht-small col-sm-offset-6">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+		</div>
+	
+<!-- 5-12 -->
+	<div class="row">
+		<div class="col-sm-1 game_ht-small">
+		  <div class="game_ht-fill game_box">
+5-12
+		  </div>
+		</div>
+		<div class="col-sm-1 game_ht-small col-sm-offset-10">
+		  <div class="game_ht-fill game_box">
+5-12
+		  </div>
+		</div>
+	</div>
+	
+		<!-- second round -->
+		<div class="row">
+			<div class="col-sm-1 game_ht-small col-sm-offset-1">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+			<div class="col-sm-1 game_ht-small col-sm-offset-8">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+		</div>
+	
+<!-- 4-13 -->
+	<div class="row">
+		<div class="col-sm-1 game_ht-small">
+		  <div class="game_ht-fill game_box">
+4-13
+		  </div>
+		</div>
+		<div class="col-sm-1 game_ht-small col-sm-offset-10">
+		  <div class="game_ht-fill game_box">
+4-13
+		  </div>
+		</div>
+	</div>
+		
+		<!-- fourth round -->
+		<div class="row">
+			<div class="col-sm-1 game_ht-small col-sm-offset-3">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+			<div class="col-sm-1 game_ht-small col-sm-offset-4">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+		</div>
+		
+<!-- 6-11 -->
+	<div class="row">
+		<div class="col-sm-1 game_ht-small">
+		  <div class="game_ht-fill game_box">
+6-11
+		  </div>
+		</div>
+		<div class="col-sm-1 game_ht-small col-sm-offset-10">
+		  <div class="game_ht-fill game_box">
+6-11
+		  </div>
+		</div>
+	</div>
+	
+		<!-- second round -->
+		<div class="row">
+			<div class="col-sm-1 game_ht-small col-sm-offset-1">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+			<div class="col-sm-1 game_ht-small col-sm-offset-8">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+		</div>
+	
+<!-- 3-14 -->
+	<div class="row">
+		<div class="col-sm-1 game_ht-small">
+		  <div class="game_ht-fill game_box">
+3-14
+		  </div>
+		</div>
+		<div class="col-sm-1 game_ht-small col-sm-offset-10">
+		  <div class="game_ht-fill game_box">
+3-14
+		  </div>
+		</div>
+	</div>
+	
+		<!-- third round -->
+		<div class="row">
+			<div class="col-sm-1 game_ht-small col-sm-offset-2">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+			<div class="col-sm-1 game_ht-small col-sm-offset-6">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+		</div>
+	
+<!-- 7-10 -->
+	<div class="row">
+		<div class="col-sm-1 game_ht-small">
+		  <div class="game_ht-fill game_box">
+7-10
+		  </div>
+		</div>
+		<div class="col-sm-1 game_ht-small col-sm-offset-10">
+		  <div class="game_ht-fill game_box">
+7-10
+		  </div>
+		</div>
+	</div>
+	
+		<!-- second round -->
+		<div class="row">
+			<div class="col-sm-1 game_ht-small col-sm-offset-1">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+			<div class="col-sm-1 game_ht-small col-sm-offset-8">
+			  <div class="game_ht-fill game_box">
+
+			  </div>
+			</div>
+		</div>
+	
+<!-- 2-15 -->
+	<div class="row">
+		<div class="col-sm-1 game_ht-small">
+		  <div class="game_ht-fill game_box">
+2-15
+		  </div>
+		</div>
+		<div class="col-sm-1 game_ht-small col-sm-offset-10">
+		  <div class="game_ht-fill game_box">
+2-15
+		  </div>
+		</div>
+	</div>
+	
 </div>
-
-
-<%= link_to 'New Game', new_game_path %>

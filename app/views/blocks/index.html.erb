@@ -25,10 +25,11 @@
 						<% unless block.user.nil? %>
 							<%= block.user.name %>
 						<% end %>
-						<% if !current_user.nil? && current_user.admin? %>
-							<span><%= link_to 'Show', block %></span>
-							<span><%= link_to 'Edit', edit_block_path(block) %></span>
-							<span><%= link_to 'Destroy', block, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+						<br>
+						<% if !current_user.nil? %>
+							<span><%= link_to 'S', block %></span>
+							<span><%= link_to 'E', edit_block_path(block) %></span>
+							<span><%= link_to 'D', block, method: :delete, data: { confirm: 'Are you sure?' } %></span>
 						<% end %>
 					  </div>
 					</div>
