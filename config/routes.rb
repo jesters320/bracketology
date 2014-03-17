@@ -1,4 +1,6 @@
 StatisticallySpeaking::Application.routes.draw do
+    resources :teams
+  
   resources :blocks
 
   resources :away_scores
