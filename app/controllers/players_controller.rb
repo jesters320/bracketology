@@ -1,6 +1,7 @@
 class PlayersController < ApplicationController
   before_action :signed_in_user, except: [:index, :show]
   before_action :set_player, only: [:show, :edit, :update, :destroy]
+  before_action :set_blocks, only: [:create, :update]
 
   # GET /players
   # GET /players.json
@@ -26,12 +27,12 @@ class PlayersController < ApplicationController
   # POST /players.json
   def create
     @player = Player.new(player_params)
-
+	
+	@player.blocks.delete_all
+	@player.blocks << @blocks
+	
     respond_to do |format|
       if @player.save
-		params[:blocks].split(',').each do |id|
-		  @player.blocks << Block.find(id)
-		end
         format.html { redirect_to @player, notice: 'Player was successfully created.' }
         format.json { render action: 'show', status: :created, location: @player }
       else
@@ -44,11 +45,12 @@ class PlayersController < ApplicationController
   # PATCH/PUT /players/1
   # PATCH/PUT /players/1.json
   def update
+  
+	@player.blocks.delete_all
+	@player.blocks << @blocks
+  
     respond_to do |format|
       if @player.update(player_params)
-	  	params[:blocks].split(',').each do |id|
-		  @player.blocks << Block.find(id)
-		end
         format.html { redirect_to @player, notice: 'Player was successfully updated.' }
         format.json { head :no_content }
       else
@@ -73,9 +75,13 @@ class PlayersController < ApplicationController
     def set_player
       @player = Player.find(params[:id])
     end
+	
+	def set_blocks
+      @blocks = Block.where(id: params[:block_ids])
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_params
-      params.require(:player).permit(:name, :block)
+      params.require(:player).permit(:name, block_ids: [])
     end
 end

@@ -18,7 +18,7 @@
   
   <div class="field">
 	<%= f.label :blocks %><br>
-	<%= select_tag("blocks[]", options_for_select(Block.all.collect { |b| [ b.label, b.id ] }, @player.blocks.collect { |b| b.id}), {:multiple=>true, :size=>6})%>
+	<%= select_tag "block_ids", options_from_collection_for_select( Block.all, 'id', 'label', {selected: @player.blocks.map(&:id), disabled: Block.unavailable_blocks(@player.id).map(&:id)} ), {:multiple=>true, :size=>6} %>
   </div>
   
   <div class="actions">
