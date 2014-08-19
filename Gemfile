@@ -12,6 +12,8 @@ gem 'jbuilder', '~>1.0.2'
 gem 'bootstrap-sass', '3.1.1.0'
 gem 'will_paginate', '~>3.0.4'
 gem 'bootstrap-will_paginate', '~>0.0.9'
+gem 'nokogiri', '~> 1.6.3.1'
+gem 'rest-client', '~> 1.7.2'
 
 group :development, :test do
   gem 'sqlite3'
