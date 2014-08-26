@@ -1,3 +1,5 @@
+require 'scraper.rb'
+
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
   before_action :signed_in_user, except: [:index, :show]
@@ -37,6 +39,9 @@ class GamesController < ApplicationController
 
   # GET /games/1/edit
   def edit
+	scraper = Scraper.new("http://scores.espn.go.com/ncb/boxscore?gameId=" + @game.unique_identifier)
+	@game.home_score = scraper.get_home_score
+	@game.away_score = scraper.get_visitor_score
   end
 
   # POST /games
