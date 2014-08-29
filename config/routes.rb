@@ -1,7 +1,7 @@
 StatisticallySpeaking::Application.routes.draw do
   resources :players
 
-    resources :teams
+  resources :teams
   
   resources :blocks
 
@@ -9,7 +9,11 @@ StatisticallySpeaking::Application.routes.draw do
 
   resources :home_scores
 
-  resources :games
+  resources :games do
+	  member do
+		get 'update_score'
+	  end
+	end
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :users

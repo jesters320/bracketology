@@ -10,11 +10,23 @@ class Scraper
 	end
 	
 	def get_home_score
-	  @doc.css(".linescore td.ts")[0].inner_text
+	  begin
+		@doc.css(".linescore td.ts")[0].inner_text
+	  rescue
+		-1
+	  end
 	end
 	
 	def get_visitor_score
-	  @doc.css(".linescore td.ts")[1].inner_text
+	  begin
+		@doc.css(".linescore td.ts")[1].inner_text
+	  rescue
+		-1
+	  end
 	end
 
+	def full_doc
+		@doc
+	end
+	
 end

@@ -1,0 +1,27 @@
+	$(document).ready(function() {
+	
+		$("#btn_udpate_score").click(function() {
+			$.ajax({
+				 type: "GET",
+				 contentType: "application/json; charset=utf-8",
+				 url: "/games/1/update_score",
+				 dataType: "text",
+				 success: function (result) {
+					//window.alert( "success!" );
+					var obj = $.parseJSON( result );
+					setScores(obj);
+					
+				 },
+				 error: function (){
+					window.alert("something wrong!");
+				 }
+			});
+		});
+		
+	})
+	
+	// scores: {"home":"54","away":"60"}
+	function setScores(scores) {
+		$("#game_home_score").val(scores.home);
+		$("#game_away_score").val(scores.away);
+	}

@@ -1,7 +1,7 @@
 require 'scraper.rb'
 
 class GamesController < ApplicationController
-  before_action :set_game, only: [:show, :edit, :update, :destroy]
+  before_action :set_game, only: [:show, :edit, :update, :destroy, :update_score]
   before_action :signed_in_user, except: [:index, :show]
 
   # GET /games
@@ -39,9 +39,6 @@ class GamesController < ApplicationController
 
   # GET /games/1/edit
   def edit
-	scraper = Scraper.new("http://scores.espn.go.com/ncb/boxscore?gameId=" + @game.unique_identifier)
-	@game.home_score = scraper.get_home_score
-	@game.away_score = scraper.get_visitor_score
   end
 
   # POST /games
@@ -82,6 +79,16 @@ class GamesController < ApplicationController
       format.html { redirect_to games_url }
       format.json { head :no_content }
     end
+  end
+  
+  # GET /games/1/update_score
+  # GET /games/1/update_score.json
+  def update_score
+	scraper = Scraper.new("http://scores.espn.go.com/ncb/boxscore?gameId=" + @game.unique_identifier) if @game.unique_identifier
+	
+	@scores = {home: scraper.get_home_score, away: scraper.get_visitor_score}
+	
+	render json: @scores
   end
 
   private
